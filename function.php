@@ -8,7 +8,7 @@ $errologin = $errologin ?? '';
 /**
  * Cria uma conexão com o banco de dados
  *
- * @return string
+ * @return object
  */
 function connection () {
     global $host,$port,$db,$user,$passwd;

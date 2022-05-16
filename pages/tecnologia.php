@@ -1,57 +1,7 @@
 <?php
 
 include 'template.php';
-
-class classFeed {
-        
-    private $feed = null;
-
-    public function __construct($feed_url) {
-        $this->loadFeed($feed_url); 
-    }
-
-    private function loadFeed($feed_url) {
-        $curl = curl_init();
-        curl_setopt_array($curl, [
-            CURLOPT_URL => $feed_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_CUSTOMREQUEST => 'GET'
-        ]);
-
-        $response = curl_exec($curl);
-        curl_close($curl);
-
-        return $this->parseXML($response);
-    }
-
-    private function parseXML($response) {
-        if(!strlen($response)) return false;      
-        $this->feed = simplexml_load_string($response);
-        return true;
-    }
-
-
-    public function getTitle() {
-        return $this->feed->channel->title;
-    }
-
-    public function getDescription() {
-        return $this->feed->channel->description;
-    }
-
-    public function getLastUpdate() {
-        return date('d/m/Y à\s H:i:s',strtotime($this->feed->channel->lastBuildDate));
-    }
-
-    public function getLogo() {
-        return $this->feed->channel->image->url;
-    }
-
-    public function getItens() {
-        return $this->feed->channel->item;
-    }
-
-} 
+include 'classFeed.php';
 
 $objTecMundo = new classFeed('https://rss.tecmundo.com.br/feed');
 $items = '';
@@ -77,7 +27,6 @@ foreach ($objTecMundo->getItens() as $item) {
                 </div>';
 }
 
-$logo = $objTecMundo->getLogo();
 $title = $objTecMundo->getTitle();
 $update = $objTecMundo->getLastUpdate();
 $description = $objTecMundo->getDescription();
@@ -102,7 +51,7 @@ $tecnologia =  "<body class='bg-dark text-light'>
  * @return string
  */
 function page_feed () { 
-    global $tecnologia;   
+    global $tecnologia; 
     $tags = [
         'header'    => render('pages-html/header.html', $tag = [ "nav" => verificarlogin()]),
         'tecnologia' => $tecnologia,
