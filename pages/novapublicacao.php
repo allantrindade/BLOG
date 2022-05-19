@@ -102,7 +102,7 @@ function novapub(){
                             </div>
                             <div class='d-flex flex-row mb-2 justify-content-center'>
                                 <div>
-                                    <button type='submit' name='postar' class='btn btn-warning'>Postar</button>
+                                    <button type='submit' name='postar' class='btn btn-primary'>Postar</button>
                                 </div>
                                 <div class='mx-3'>
                                     <a href='feed' name='postar' class='btn btn-danger'>Cancelar</a>

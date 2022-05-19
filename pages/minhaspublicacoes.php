@@ -154,16 +154,16 @@ function pubuser($id){
                     </div>
                 </div>  
 
-                <div class='col-12 mb-5 p-4 bg-secondary rounded-3 text-light'> 
+                <div class='col-12 mb-5 p-4 bg-light rounded-3 text-dark'> 
                     <div class='pb-3 row'>
                         <div class='col-5'>
                             <img src='img/avatares/{$publicacao->avatar}.png' alt='mdo' width='32' height='32' class='rounded-circle mx-2'>
-                            <strong class='text-light'>{$publicacao->nome} {$publicacao->sobrenome}</strong>
+                            <strong class='text-dark'>{$publicacao->nome} {$publicacao->sobrenome}</strong>
                         </div>
                         <div class='col-6 fs-6 text-end mx-4'><i>{$publicacao->datahora}</i>
                         </div>
                     </div>
-                    <div class='card bg-dark'>
+                    <div class='card bg-dark rounded-3 text-light'>
                         <img src='img/publicacoes/{$publicacao->imagempost}.png' width='566px' height='400' class='card-img-top p-1' alt='...' style='height: 350px;'>
                             <div class='card-body'>
                                 <h5 class='card-title'>{$publicacao->titulo}</h5>
@@ -194,11 +194,11 @@ function pubuser($id){
 function minhaspub(){
     global $dados;
     if(pubuser($dados['id']) == ''){
-        $retorno =  "<div class='card text-center mt-5'>                                    
+        $retorno =  "<div class='card text-center mt-5 bg-light'>                                    
                         <div class='card-body'>
                             <h5 class='card-title'>Nenhuma publicação encontrada!</h5>
                             <p class='card-text'>Clique no botão abaixo e crie uma!</p>
-                            <a type='button' class='btn btn-primary' href='novapublicacao'>Criar publicação...</a>                                        
+                            <a type='button' class='btn btn-success' href='novapublicacao'>Criar Publicação</a>                                        
                         </div>                                    
                     </div>"; 
     }else{

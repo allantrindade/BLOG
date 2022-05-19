@@ -31,7 +31,7 @@ $title = $objTecMundo->getTitle();
 $update = $objTecMundo->getLastUpdate();
 $description = $objTecMundo->getDescription();
 
-$tecnologia =  "<body class='bg-dark text-light'>
+$tecnologia =  "<main class='bg-dark text-light'>
                 <div class='container p-4 text-light'>
                     <div class='text-center'>
                         <h1 class='m-0'>$title</h1>
@@ -42,7 +42,7 @@ $tecnologia =  "<body class='bg-dark text-light'>
                     $items                    
                     </div>
                     </div>
-                </body>";
+                </main>";
 
 
 /**

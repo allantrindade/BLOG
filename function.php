@@ -25,8 +25,8 @@ function verificarlogin() {
     if ($_SESSION['acesso'] == false){
         $nav = "
                 <div class='text-end'>
-                <a type='button' class='btn btn-outline-light me-2' href='login'>Login</a>
-                <a type='button' class='btn btn-warning' href='cadastro'>Cadastre-se</a>
+                <a type='button' class='btn btn-primary me-2' href='login'>Login</a>
+                <a type='button' class='btn btn-outline-primary' href='cadastro'>Cadastre-se</a>
                 </div>";
       
         } else {
@@ -48,7 +48,7 @@ function verificarlogin() {
                         </ul>
                     </div>";
          }
-    Return $nav;
+    return $nav;
 }
 
 
@@ -132,12 +132,12 @@ function publicacao(){
     
     foreach ($publicacoes as $publicacao) {
         $mensagem = substr($publicacao->mensagem,0,110);
-        $html .=    "<div class='col-12 mb-4 p-3 pb-2 bg-dark rounded-3 text-light shadow'> 
+        $html .=    "<div class='col-12 mb-4 p-3 pb-2 bg-light rounded-3 text-dark shadow'> 
                         <div class='pb-3'>                
                             <img src='img/avatares/{$publicacao->avatar}.png' alt='mdo' width='32' height='32' class='rounded-circle mx-2'>
-                            <strong class='text-light'>{$publicacao->nome} {$publicacao->sobrenome}</strong>                              
+                            <strong class='text-dark'>{$publicacao->nome} {$publicacao->sobrenome}</strong>                              
                         </div>
-                        <div class='card bg-secondary mx-3 text-dark'>
+                        <div class='card bg-dark mx-3 text-light'>
                             <img src='img/publicacoes/{$publicacao->imagempost}.png' width='425px' height='300' class='card-img-top p-1'>
                                 <div class='card-body'>
                                     <h5 class='card-title'>{$publicacao->titulo}</h5>
@@ -146,7 +146,7 @@ function publicacao(){
                                 <div class='d-grid gap-2 d-md-flex justify-content-end'>
                                     <form method='POST' action='comentar'> 
                                         <input name='donopub' value='{$publicacao->idusuario}' style='display: none;'>
-                                        <button class='btn btn-dark m-3' name='publicacao' value='{$publicacao->id}' type='submit'>Ver publicação</button>  
+                                        <button class='btn btn-primary m-3' name='publicacao' value='{$publicacao->id}' type='submit'>Ver publicação</button>  
                                     </form>
                                 </div>
                         </div>
@@ -174,15 +174,15 @@ function mensagem($id){
         
         foreach ($publicacoes as $publicacao) {
             if($publicacao->id == $id){
-            $postagem = "<div class=' p-4 bg-dark rounded-3 shadow'> 
+            $postagem = "<div class=' p-4 bg-light text-dark rounded-3 shadow'> 
                             <div class='pb-3 row'>
                                 <div class='col-6'>
                                     <img src='img/avatares/{$publicacao->avatar}.png' alt='mdo' width='32' height='32' class='rounded-circle mx-2'>
-                                    <strong class='text-light'>{$publicacao->nome} {$publicacao->sobrenome}</strong>
+                                    <strong class='text-dark'>{$publicacao->nome} {$publicacao->sobrenome}</strong>
                                 </div>
-                                <div class='col-6 fs-6 text-light text-end px-4'><i>{$publicacao->datahora}</i></div>
+                                <div class='col-6 fs-6 text-dark text-end px-4'><i>{$publicacao->datahora}</i></div>
                                 </div>
-                                <div class='card bg-secondary'>
+                                <div class='card bg-dark text-light'>
                                 <img src='img/publicacoes/{$publicacao->imagempost}.png' width='425px' height='300' class='card-img-top p-1'>
                                     <div class='card-body'>
                                     <h5 class='card-title' >{$publicacao->titulo}</h5>
@@ -207,13 +207,13 @@ function verificarpublicacao() {
 
 if(publicacao() == ''){
     global $dados;
-    $retorno = "<div class='card text-center col-8 mt-5'>                                    
-                    <div class='card-body'>
-                        <h5 class='card-title'>Nenhuma publicação encontrada!</h5>
-                            <p class='card-text'>Seja o primeiro a criar uma!</p>
-                        <a type='button' class='btn btn-primary' href='novapublicacao'>Criar publicação...</a>                                        
-                    </div>                                    
-                </div>"; 
+    $retorno = "<div class='card text-center mt-5 bg-light'>                                    
+        <div class='card-body'>
+            <h5 class='card-title'>Nenhuma publicação encontrada!</h5>
+            <p class='card-text'>Clique no botão abaixo e crie uma!</p>
+            <a type='button' class='btn btn-success' href='novapublicacao'>Criar Publicação</a>                                        
+        </div>                                    
+    </div>"; 
   }else{
   $retorno = publicacao(); 
     }

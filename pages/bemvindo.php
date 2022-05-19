@@ -20,7 +20,7 @@ for ($i=1; $i <= 6; $i++) {
                             <h5 class="card-title">'. $objTecMundo->getItens()[$i]->title .'</h5>
 
                             <!-- Botão para acionar modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
                                 Leia Mais
                             </button>
 
@@ -36,7 +36,7 @@ for ($i=1; $i <= 6; $i++) {
                                             <p class="card-text">'. $objTecMundo->getItens()[$i]->description .'</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ for ($i=1; $i <= 6; $i++) {
                             <h5 class="card-title">'. $objEsporte->getItens()[$i]->title .'</h5>
                             
                             <!-- Botão para acionar modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Esporte'.$i.'">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Esporte'.$i.'">
                                 Leia Mais
                             </button>
 
@@ -71,7 +71,7 @@ for ($i=1; $i <= 6; $i++) {
                                             <p class="card-text">'. $objEsporte->getItens()[$i]->description .'</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ for ($i=1; $i <= 6; $i++) {
                             <h5 class="card-title">'. $objPolitica->getItens()[$i]->title .'</h5>
                             
                             <!-- Botão para acionar modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_Politica'.$i.'">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Politica'.$i.'">
                                 Leia Mais
                             </button>
 
@@ -106,7 +106,7 @@ for ($i=1; $i <= 6; $i++) {
                                             <p class="card-text">'. $objPolitica->getItens()[$i]->description .'</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@ for ($i=1; $i <= 6; $i++) {
 
 $feed =    "<body class='bg-dark text-light'>
                 <div class='mx-auto text-center my-3'>
-                    <img src='img/imagem22.png' width='760' height='200'>
+                    <img class='rounded-circle' src='img/imagem22.png' width='760' height='200'>
                 </div>
                 <div class='container p-4 text-light'>
                     <div class='row row-cols-1 row-cols-md-2 g-4'>

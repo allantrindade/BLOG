@@ -171,9 +171,9 @@ function lercomentarios($id){
                                     </div>
                                     <div class='col-12 mb-3 rounded-3 shadow'> 
                                         <div class='card'>
-                                            <div class='card-header'>   
+                                            <div class='card-header bg-dark'>   
                                                 <img src='img/avatares/{$publicacao->avatar}.png' alt='mdo' width='32' height='32' class='rounded-circle mx-2'>
-                                                <strong class='text-secondary'>{$publicacao->nome} {$publicacao->sobrenome}</strong>
+                                                <strong class='text-light'>{$publicacao->nome} {$publicacao->sobrenome}</strong>
                                             </div>
                                             <div class='card-body'>
                                                 <blockquote class='blockquote mb-0'>
@@ -256,9 +256,9 @@ function verificarpost() {
   }else{
   $retorno = mensagem($id);
   $retorno .=   "</div>
-                <div class='col-5 justify-content-center border'>
+                <div class='col-5 justify-content-center border bg-light'>
                     <form method='POST' action='comentar' class='p-3'>
-                        <div class='row '>
+                        <div class='row'>
                             <div class='form-floating mb-4'>
                                  <textarea class='form-control ' placeholder='Escreva sua mensagem...' name='comentario'
                                 id='floatingTextarea' style='height: 100px' required></textarea>
