@@ -8,7 +8,7 @@ $objPolitica = new classFeed('https://www.rjnewsnoticias.com.br/feed/3/politica/
 $objEsporte = new classFeed('https://www.rjnewsnoticias.com.br/feed/8/esportes/');
 
 
-for ($i=1; $i <= 6; $i++) {
+for ($i=1; $i <= 9; $i++) {
     $dataTecMundo  = date('d/m/Y à\s H:i:s', strtotime($objTecMundo->getItens()[$i]->pubDate));
     $dataEsporte  = date('d/m/Y à\s H:i:s', strtotime($objEsporte->getItens()[$i]->pubDate));
     $dataPolitica  = date('d/m/Y à\s H:i:s', strtotime($objPolitica->getItens()[$i]->pubDate));
@@ -33,13 +33,13 @@ for ($i=1; $i <= 6; $i++) {
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="TituloModalCentralizado">'. $objTecMundo->getItens()[$i]->title .'</h5>                       
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                            <button onclick="incrementClick()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p class="card-text">'. $objTecMundo->getItens()[$i]->description .'</p>
+                                            <p class="card-text">'. str_replace('<img','<img class="col-12"',$objTecMundo->getItens()[$i]->description) .'</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                            <button onclick="incrementClick()" type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@ for ($i=1; $i <= 6; $i++) {
                             <img src="'. $objEsporte->getItens()[$i]->enclosure->attributes()->url .'" class="mb-3 col-12 img-responsive img-thumbnail" alt="'. $objEsporte->getItens()[$i]->title .'">
                             <p class="card-text"> '. substr(strip_tags($objEsporte->getItens()[$i]->description),0,150) . '...</p>
                             <!-- Botão para acionar modal -->
-                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
+                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Esporte'.$i.'">
                                 Leia Mais
                             </button>
                             </p>
@@ -72,13 +72,13 @@ for ($i=1; $i <= 6; $i++) {
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="TituloModalCentralizado">'. $objEsporte->getItens()[$i]->title .'</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                            <button onclick="incrementClick()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                                         </div>
                                         <div class="modal-body">
                                             <p class="card-text">'. $objEsporte->getItens()[$i]->description .'</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                            <button onclick="incrementClick()" type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@ for ($i=1; $i <= 6; $i++) {
                             <img src="'. $objPolitica->getItens()[$i]->enclosure->attributes()->url .'" class="mb-3 col-12 img-responsive img-thumbnail" alt="'. $objPolitica->getItens()[$i]->title .'">
                             <p class="card-text"> '. substr(strip_tags($objPolitica->getItens()[$i]->description),0,150) . '...</p>
                             <!-- Botão para acionar modal -->
-                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
+                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Politica'.$i.'">
                                 Leia Mais
                             </button>
                             </p>
@@ -111,13 +111,13 @@ for ($i=1; $i <= 6; $i++) {
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="TituloModalCentralizado">'. $objPolitica->getItens()[$i]->title .'</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                            <button onclick="incrementClick()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                                         </div>
                                         <div class="modal-body">
                                             <p class="card-text">'. $objPolitica->getItens()[$i]->description .'</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                            <button onclick="incrementClick()" type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                                         </div>
                                     </div>
                                 </div>
