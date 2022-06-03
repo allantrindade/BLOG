@@ -13,6 +13,7 @@ for ($i=1; $i <= 6; $i++) {
     $dataEsporte  = date('d/m/Y à\s H:i:s', strtotime($objEsporte->getItens()[$i]->pubDate));
     $dataPolitica  = date('d/m/Y à\s H:i:s', strtotime($objPolitica->getItens()[$i]->pubDate));
 
+    // Feed TecMundo
     $items .=   '<div class="col mb-5">
                     <div class="card text-dark h-100">
                         <div class="card-body">
@@ -47,7 +48,9 @@ for ($i=1; $i <= 6; $i++) {
                             <small class="text-muted">Publicado em: '. $dataTecMundo .'</small>   
                         </div>
                     </div>
-                </div>';      
+                </div>';
+
+    // Feed Esportes                  
     $items .=   '<div class="col mb-5">
                     <div class="card text-dark h-100">
                         <div class="card-body">
@@ -83,6 +86,8 @@ for ($i=1; $i <= 6; $i++) {
                         </div>
                     </div>
                 </div>';
+
+    // Feed Politica            
     $items .=   '<div class="col mb-5">
                     <div class="card text-dark h-100">
                         <div class="card-body">
@@ -139,9 +144,9 @@ $feed =    "<body class='bg-dark text-light'>
 function page_bemvindo () {
     global $feed;
     $tags = [
-        'header'    => render('pages-html/header.html', $tag = [ "nav" => verificarlogin()]),
-        'feed' => $feed,
-        'footer'    => render('pages-html/footer.html')
+        'header'  =>  render('pages-html/header.html', $tag = [ "nav" => verificarlogin()]),
+        'feed'    =>  $feed,
+        'footer'  =>  render('pages-html/footer.html')
     ];
 
     return render('pages-html/bemvindo.html', $tags);

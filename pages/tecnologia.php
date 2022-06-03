@@ -18,7 +18,7 @@ foreach ($objTecMundo->getItens() as $item) {
                             <span class="badge bg-primary">'. $item->category .'</span>
                             <h5 class="card-title">'. $item->title .'</h5>
                             <img src="'. $image .'" class="card-img-top" alt="'. $item->title .'">
-                            <p class="card-text">'. $item->description .'</p>
+                            <p class="card-text">'. str_replace('<iframe','<iframe class="col-12"',$item->description) .'</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">Publicado em: '. $data .' por: <b>'. $dc->creator .'</b></small>   
