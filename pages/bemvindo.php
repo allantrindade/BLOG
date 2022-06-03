@@ -18,19 +18,21 @@ for ($i=1; $i <= 6; $i++) {
                     <div class="card text-dark h-100">
                         <div class="card-body">
                             <span class="badge bg-info">'. $objTecMundo->getItens()[$i]->category .'</span>
-                            <h5 class="card-title">'. $objTecMundo->getItens()[$i]->title .'</h5>
-
+                            <h6 class="card-title mt-1">'. $objTecMundo->getItens()[$i]->title .'</h6>
+                            <img src="'. $objTecMundo->getItens()[$i]->enclosure->attributes()->url .'" class="mb-3 col-12 img-responsive img-thumbnail" alt="'. $objTecMundo->getItens()[$i]->title .'">
+                            <p class="card-text"> '. substr(strip_tags($objTecMundo->getItens()[$i]->description),0,150) . '...</p>
                             <!-- Botão para acionar modal -->
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
+                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
                                 Leia Mais
                             </button>
+                            </p>
 
                             <!-- Modal -->
                             <div class="modal fade" id="Modal_Tecnologia'.$i.'" tabindex="-1" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="TituloModalCentralizado">'. $objTecMundo->getItens()[$i]->title .'</h5>
+                                            <h5 class="modal-title" id="TituloModalCentralizado">'. $objTecMundo->getItens()[$i]->title .'</h5>                       
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                                         </div>
                                         <div class="modal-body">
@@ -55,12 +57,14 @@ for ($i=1; $i <= 6; $i++) {
                     <div class="card text-dark h-100">
                         <div class="card-body">
                             <span class="badge bg-success">'. $objEsporte->getItens()[$i]->category .'</span>
-                            <h5 class="card-title">'. $objEsporte->getItens()[$i]->title .'</h5>
-                            
+                            <h6 class="card-title mt-1">'. $objEsporte->getItens()[$i]->title .'</h6>
+                            <img src="'. $objEsporte->getItens()[$i]->enclosure->attributes()->url .'" class="mb-3 col-12 img-responsive img-thumbnail" alt="'. $objEsporte->getItens()[$i]->title .'">
+                            <p class="card-text"> '. substr(strip_tags($objEsporte->getItens()[$i]->description),0,150) . '...</p>
                             <!-- Botão para acionar modal -->
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Esporte'.$i.'">
+                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
                                 Leia Mais
                             </button>
+                            </p>
 
                             <!-- Modal -->
                             <div class="modal fade" id="Modal_Esporte'.$i.'" tabindex="-1" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
@@ -92,12 +96,14 @@ for ($i=1; $i <= 6; $i++) {
                     <div class="card text-dark h-100">
                         <div class="card-body">
                             <span class="badge bg-warning">'. $objPolitica->getItens()[$i]->category .'</span>
-                            <h5 class="card-title">'. $objPolitica->getItens()[$i]->title .'</h5>
-                            
+                            <h6 class="card-title mt-1">'. $objPolitica->getItens()[$i]->title .'</h6>
+                            <img src="'. $objPolitica->getItens()[$i]->enclosure->attributes()->url .'" class="mb-3 col-12 img-responsive img-thumbnail" alt="'. $objPolitica->getItens()[$i]->title .'">
+                            <p class="card-text"> '. substr(strip_tags($objPolitica->getItens()[$i]->description),0,150) . '...</p>
                             <!-- Botão para acionar modal -->
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Politica'.$i.'">
+                            <p class="m-0"><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#Modal_Tecnologia'.$i.'">
                                 Leia Mais
                             </button>
+                            </p>
 
                             <!-- Modal -->
                             <div class="modal fade" id="Modal_Politica'.$i.'" tabindex="-1" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
@@ -126,11 +132,8 @@ for ($i=1; $i <= 6; $i++) {
 }
 
 $feed =    "<body class='bg-dark text-light'>
-                <div class='mx-auto text-center my-3'>
-                    <img class='rounded-circle' src='img/imagem22.png' width='760' height='200'>
-                </div>
-                <div class='container p-4 text-light'>
-                    <div class='row row-cols-1 row-cols-md-2 g-4'>
+                <div class='container p-5 text-light'>
+                    <div class='row row-cols-1 row-cols-md-3 g-4'>
                         $items                    
                     </div>
                 </div>

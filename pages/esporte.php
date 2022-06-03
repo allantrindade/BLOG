@@ -17,7 +17,7 @@ foreach ($objEsporte->getItens() as $item) {
                         <div class="card-body">
                             <span class="badge bg-primary">'. $item->category .'</span>
                             <h5 class="card-title">'. $item->title .'</h5>
-                            <img src="'. $image .'" class="card-img-top" alt="'. $item->title .'">
+                            <img src="'. $image .'" class="card-img-top mb-2" alt="'. $item->title .'">
                             <p class="card-text">'. $item->description .'</p>
                         </div>
                         <div class="card-footer">
